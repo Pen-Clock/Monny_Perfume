@@ -4,7 +4,7 @@ import AddToCartButton from "~/components/products/add-to-cart-button"
 import ProductGallery from "~/components/products/product-gallery"
 import RelatedProducts from "~/components/products/related-products"
 
-export default function ProductPage({ params }: { params: { id: string } }) {
+export default function ProductPage({ params, searchParams,}: { params: { id: string };   searchParams?: { [key: string]: string | string[] | undefined }; }) {
   const product = allProducts.find((p) => p.id === params.id)
 
   if (!product) {
